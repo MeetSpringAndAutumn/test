@@ -1,0 +1,25 @@
+#!/bin/sh
+
+msg_file=$1
+first_line=$(sed -n '1{s/\r$//;p;}' "$msg_file")
+
+case "$first_line" in
+  Merge\ *|Revert\ *|fixup!\ *|squash!\ *)
+    exit 0
+    ;;
+esac
+
+summary=${first_line#*:}
+if [ "$summary" = "$first_line" ]; then
+  printf '%s\n' '提交摘要需包含中文' >&2
+  exit 1
+fi
+
+summary=$(printf '%s' "$summary" | sed 's/^[[:space:]]*//')
+
+if printf '%s' "$summary" | grep -Eq '[一-鿿]'; then
+  exit 0
+fi
+
+printf '%s\n' '提交摘要需包含中文' >&2
+exit 1

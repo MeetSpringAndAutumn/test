@@ -85,8 +85,8 @@ Run a PowerShell verification flow that:
 - Creates a temporary Git repository
 - Copies `.githooks/commit-msg` into that repository
 - Sets `core.hooksPath` to `.githooks`
-- Attempts `git commit --allow-empty -m "docs: add hook"` and expects failure
-- Attempts `git commit --allow-empty -m "docs: <Chinese summary>"` and expects success
+- Attempts `git commit --allow-empty -F <english-message-file>` and expects failure
+- Attempts `git commit --allow-empty -F <chinese-message-file>` and expects success
 
 Expected: the real Git commit flow matches the direct script checks.
 
