@@ -6,16 +6,15 @@
 
 **Constraints:**
 - Do not modify existing tracked files in the repository.
-- Only add new Markdown artifacts for the demo.
+- Only add two new Markdown demo artifacts, plus the required design and plan docs.
 - Keep the demo inside an isolated git worktree because the main workspace already has unrelated local changes.
 - Do not claim that this Codex session has a true subagent dispatch API when only parallel tool calls are available.
 
-**Chosen approach:** Create two independent Markdown tasks in the isolated worktree, execute their supporting checks in parallel, then summarize how this maps to a real subagent workflow and where the current runtime falls short.
+**Chosen approach:** Create two independent Markdown tasks in the isolated worktree, execute their supporting checks in parallel, then summarize in the final response how this maps to a real subagent workflow and where the current runtime falls short.
 
 **Artifacts:**
 - `docs/demo-parallel-task-1.md`
 - `docs/demo-parallel-task-2.md`
-- `docs/demo-parallel-summary.md`
 - supporting plan/design docs in `docs/plans/`
 
 **Execution model:**
@@ -27,5 +26,5 @@
 **Success criteria:**
 - The demo runs entirely inside the isolated worktree.
 - Two new Markdown task files are created without touching existing repo content.
-- A summary file explains which parts of the superpowers workflow were validated and which parts could only be simulated.
+- The final response explains which parts of the superpowers workflow were validated and which parts could only be simulated.
 - Final status is backed by fresh verification evidence from git/status checks rather than assumption.
