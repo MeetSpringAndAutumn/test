@@ -1,4 +1,4 @@
-﻿# Superpowers Parallel Demo Design
+# Superpowers Parallel Demo Design
 
 **Goal:** Demonstrate a minimal superpowers workflow in Codex that exercises skill selection, isolated worktree setup, task decomposition, parallel execution, and result synthesis.
 
@@ -28,3 +28,4 @@
 - Two new Markdown task files are created without touching existing repo content.
 - The final response explains which parts of the superpowers workflow were validated and which parts could only be simulated.
 - Final status is backed by fresh verification evidence from git/status checks rather than assumption.
+
