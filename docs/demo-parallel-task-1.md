@@ -1,14 +1,17 @@
 # Demo Task 1: Workspace Verification
 
+> This file belongs to stage 1 of the recorded demo sequence. See `docs/superpowers-subagent-demo-overview.md` for the relationship between the pseudo-parallel and real-subagent demos.
+
 ## Purpose
 
-This task verifies that the demo is running inside an isolated Git worktree on the intended branch, without interfering with the dirty main workspace.
+This task verifies that the stage 1 demo is running inside an isolated Git worktree on the intended branch, without interfering with the dirty main workspace.
 
 ## Inputs
 
-- Repository root: `D:\Project\test`
-- Worktree path: `D:\Project\test\.worktrees\superpowers-parallel-demo`
-- Expected branch: `codex/superpowers-parallel-demo`
+- Example repository root from this session: `D:\Project\test`
+- Example worktree path from this session: `D:\Project\test\.worktrees\superpowers-parallel-demo`
+- Example branch from this session: `codex/superpowers-parallel-demo`
+- Note: these values are session-specific examples, not required defaults.
 
 ## Checklist
 
@@ -21,4 +24,3 @@ This task verifies that the demo is running inside an isolated Git worktree on t
 - `git -C .worktrees/superpowers-parallel-demo branch --show-current`
 - `git -C .worktrees/superpowers-parallel-demo rev-parse --show-toplevel`
 - `git -C .worktrees/superpowers-parallel-demo status --short`
-

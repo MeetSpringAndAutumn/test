@@ -2,11 +2,13 @@
 
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
-**Goal:** Demonstrate true parallel subagent writes by having two real subagents create two separate Markdown files in the isolated demo worktree.
+**Goal:** Demonstrate, as a stage 2 follow-up, true parallel subagent writes by having two real subagents create two separate Markdown files in the isolated demo worktree.
 
-**Architecture:** Keep all changes inside `D:\Project\test\.worktrees\superpowers-parallel-demo`. The controller creates and commits the design and plan, then dispatches two real subagents in parallel with disjoint write scopes so they can each create one file without conflicts. The controller verifies the resulting files, git history, and clean worktree state.
+**Architecture:** Keep all changes inside the session-specific example worktree `D:\Project\test\.worktrees\superpowers-parallel-demo`. The controller creates and commits the design and plan, then dispatches two real subagents in parallel with disjoint write scopes so they can each create one file without conflicts. The controller verifies the resulting files, git history, and clean worktree state.
 
 **Tech Stack:** Markdown, Git worktree workflow, Codex spawned subagents
+
+**Context:** This plan records stage 2 of the sequence described in `docs/superpowers-subagent-demo-overview.md`. The path and branch values here are example values from this session, not defaults for every repository.
 
 ---
 

@@ -1,14 +1,11 @@
 # Real Subagent Write 2
 
 ## Purpose
-
 This is a demo file created by parallel real subagent 2.
 
 ## Scope
-
-Only this file is allowed to be written:
+Only this file is allowed to be written in this recorded session:
 D:\Project\test\.worktrees\superpowers-parallel-demo\docs\demo-real-subagent-write-2.md
 
 ## Verification
-
-This document is ASCII-only and was created as the write target for parallel real subagent 2.
+This document is ASCII-only and was created as the write target for parallel real subagent 2. The path above is the session-specific example used in this demo.

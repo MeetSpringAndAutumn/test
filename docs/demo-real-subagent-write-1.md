@@ -4,7 +4,8 @@
 This is a demo file created by parallel real subagent 1.
 
 ## Scope
-Only this file may be written: D:\Project\test\.worktrees\superpowers-parallel-demo\docs\demo-real-subagent-write-1.md
+Only this file may be written in this recorded session:
+D:\Project\test\.worktrees\superpowers-parallel-demo\docs\demo-real-subagent-write-1.md
 
 ## Verification
-This file is intended as a constrained single-file write demonstration by parallel real subagent 1.
+This file is intended as a constrained single-file write demonstration by parallel real subagent 1. The path above is the session-specific example used in this demo.

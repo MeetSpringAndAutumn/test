@@ -2,11 +2,13 @@
 
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
-**Goal:** Create a minimal, verifiable demo that shows how superpowers can structure a Codex workflow that resembles subagent usage.
+**Goal:** Create a minimal, verifiable stage 1 demo that shows how superpowers can structure a Codex workflow that resembles subagent usage.
 
-**Architecture:** Keep all implementation inside the isolated `codex/superpowers-parallel-demo` worktree. Add two independent Markdown task files that represent parallel pseudo-agent scopes, then run the supporting checks in parallel and synthesize the result in the final response.
+**Architecture:** Keep all implementation inside the isolated `codex/superpowers-parallel-demo` worktree. Add two independent Markdown task files that represent parallel pseudo-agent scopes, then run the supporting checks in parallel and synthesize the result in the final response. This plan intentionally limits stage 1 to main-session parallel tool calls, leaving true spawned-subagent verification to a later follow-up.
 
 **Tech Stack:** Markdown, Git worktree workflow, Codex parallel tool calls
+
+**Context:** This plan records only stage 1 of the sequence described in `docs/superpowers-subagent-demo-overview.md`. The branch and worktree values in this plan are example values from this session, not defaults for every repository.
 
 ---
 
@@ -50,15 +52,15 @@ Expected: Commit succeeds with one new file.
 **Step 1: Review the approved design**
 
 Read: `docs/plans/2026-03-15-superpowers-parallel-demo-design.md`
-Expected: The file confirms the demo must not overclaim true subagent support.
+Expected: The file confirms the demo must not overclaim true spawned-subagent support in stage 1.
 
 **Step 2: Draft the task document**
 
 Write `docs/demo-parallel-task-2.md` with these sections:
 - Title: `# Demo Task 2: Runtime Capability Audit`
-- Purpose: explain that this task checks what this Codex session can and cannot do relative to real subagents
-- Inputs: loaded skills and available tool families in the session
-- Checklist: confirm skill selection works, confirm parallel tool calls work, confirm true `Task` or subagent dispatch is not exposed
+- Purpose: explain that this task checks what stage 1 can verify directly and what remains unverified until the follow-up
+- Inputs: loaded skills and available tool families used in stage 1
+- Checklist: confirm skill selection works, confirm parallel tool calls work, confirm stage 1 does not exercise true spawned-subagent dispatch
 - Expected evidence: short bullet list of commands or observations that support those conclusions
 
 **Step 3: Verify the file exists and is readable**
@@ -88,8 +90,8 @@ Expected: Branch is `codex/superpowers-parallel-demo` and status shows only the 
 
 **Step 2: Run the runtime checks**
 
-Run: read the two task files and inspect the currently available tool families in this session.
-Expected: Evidence supports that parallel operations are available, but true spawned subagents are not exposed here.
+Run: read the two task files and inspect the currently available tool families used in stage 1.
+Expected: Evidence supports that parallel operations are available, while true spawned-subagent support remains unverified in this phase because stage 1 does not use it.
 
 **Step 3: Run the two verification tracks in parallel**
 
@@ -100,7 +102,7 @@ Expected: Both tracks complete independently without touching the same files.
 
 Summarize:
 - what parts of the superpowers workflow were exercised successfully
-- what was simulated instead of truly delegated to subagents
+- what remained unverified at the end of stage 1
 - what fresh verification evidence supports the summary
 
 **Step 5: Final verification**
